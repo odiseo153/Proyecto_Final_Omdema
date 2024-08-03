@@ -1,5 +1,5 @@
 
-# Pagina streamlit por Odiseo
+# Pagina streamlit hecha por Odiseo
 
 ## Que es esto:
 Esta es una pagina hecha en streamlit con python para la creacion de paginas web
