@@ -1,0 +1,8 @@
+python-dotenv
+requests
+pandas
+matplotlib
+seaborn
+streamlit
+wordcloud
+nltk
