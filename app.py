@@ -1,7 +1,6 @@
-import os
 import subprocess
 import sys
-
+import os
 
 def install_requirements():
     if os.path.exists('requirements.txt'):
@@ -9,23 +8,24 @@ def install_requirements():
     else:
         st.error("El archivo requirements.txt no se encontró. Por favor, asegúrate de que el archivo exista en el directorio.")
 
-
-# Intentar importar las librerías necesarias
+# Intentar instalar las dependencias desde el archivo requirements.txt
 try:
-    import requests
-    import pandas as pd
-    import matplotlib.pyplot as plt
-    import seaborn as sns
-    import streamlit as st
-    from wordcloud import WordCloud
-    from collections import Counter
-    import re
-    from nltk.corpus import stopwords
-    import nltk
-    import json
-    from dotenv import load_dotenv
-except ImportError as e:
     install_requirements()
+except Exception as e:
+    st.error(f"Hubo un error al intentar instalar las dependencias: {e}")
+
+import requests
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+import streamlit as st
+from wordcloud import WordCloud
+from collections import Counter
+import re
+from nltk.corpus import stopwords
+import nltk
+import json
+from dotenv import load_dotenv
 
 # Cargar variables de entorno
 load_dotenv()
@@ -43,8 +43,10 @@ if API_KEY is None:
     if not API_KEY:
         st.stop()  # Detiene la ejecución si la clave API no se proporciona
 
-# Título de la aplicación
+# Configuración de la página de Streamlit
 st.set_page_config(page_title="Analisis Exploratorio", page_icon=":chart_with_upwards_trend:")
+
+# Título de la aplicación
 st.title("Sistema de Análisis de Noticias sobre Seguridad Informática")
 
 # Descripción del objetivo general
