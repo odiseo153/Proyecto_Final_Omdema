@@ -6,3 +6,4 @@ seaborn
 streamlit
 wordcloud
 nltk
+plotly
