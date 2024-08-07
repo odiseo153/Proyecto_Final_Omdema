@@ -27,6 +27,8 @@ import nltk
 import json
 from dotenv import load_dotenv
 
+st.set_page_config(page_title="Analisis Exploratorio", page_icon=":chart_with_upwards_trend:")
+
 # Cargar variables de entorno
 load_dotenv()
 
@@ -44,7 +46,6 @@ if API_KEY is None:
         st.stop()  # Detiene la ejecución si la clave API no se proporciona
 
 # Configuración de la página de Streamlit
-st.set_page_config(page_title="Analisis Exploratorio", page_icon=":chart_with_upwards_trend:")
 
 # Título de la aplicación
 st.title("Sistema de Análisis de Noticias sobre Seguridad Informática")
