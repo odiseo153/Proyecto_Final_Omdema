@@ -75,15 +75,18 @@ st.markdown("""
 <hr>
 """, unsafe_allow_html=True)
 
+
 # Mostrar spinner mientras se traen los datos
 with st.spinner('Cargando datos...'):
     # Petición de datos
-    url = f"https://newsapi.org/v2/everything?q=cybersecurity&from=2024-07-13&sortBy=publishedAt&apiKey={API_KEY}"
+    url = f"https://newsapi.org/v2/everything?q=cybersecurity&from=2024-14-6&tags=hack&sortBy=publishedAt&apiKey={API_KEY}"
     response = requests.get(url)
     news_content = response.content
 
+
     # Cargar los datos en un DataFrame
     news = json.loads(news_content)
+    print(news)
     news_df = pd.DataFrame(news['articles'])
 
 # Transformación de datos
